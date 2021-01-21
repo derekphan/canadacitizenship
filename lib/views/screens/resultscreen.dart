@@ -97,11 +97,13 @@ class ResultScreen extends StatelessWidget {
                                         SizedBox(
                                           width: 10.0,
                                         ),
-                                        Text(
-                                          ql.list[index].answers[i],
-                                          style: Theme.of(context)
-                                              .accentTextTheme
-                                              .bodyText2,
+                                        Flexible(
+                                          child: Text(
+                                            ql.list[index].answers[i],
+                                            style: Theme.of(context)
+                                                .accentTextTheme
+                                                .bodyText2,
+                                          ),
                                         ),
                                       ],
                                     ),
