@@ -1,0 +1,140 @@
+[
+    {
+        "_id":1,
+        "year": "Before European exploration",
+        "description": "When Europeans explored Canada they found all regions occupied by native peoples they called Indians, because the first explorers thought they had reached the East Indies. The native people lived off the land, some by hunting and gathering, others by raising crops. The Huron-Wendat of the Great Lakes region, like the Iroquois, were farmers and hunters. The Cree and Dene of the Northwest were hunter-gatherers. The Sioux were nomadic, following the bison (buffalo) herd. The Inuit lived off Arctic wildlife. West Coast natives preserved fish by drying and smoking.",
+        "type": "exploration"
+    },
+    {
+        "_id":2,
+        "year": "1497",
+        "description": "European exploration began in earnest in 1497 with the expedition of John Cabot, who was the first to draw a map of Canada's East Coast.",
+        "type": "exploration"
+    },
+    {
+        "_id":3,
+        "year": "1534-1542",
+        "description": "Between 1534 and 1542, Jacques Cartier made three voyages across the Atlantic, claiming the land for King Francis I of France. Cartier heard two captured guides speak the Iroquoian word kanata, meaning “village.” By the 1550s, the name of Canada began appearing on maps.",
+        "type": "exploration"
+    },
+    {
+        "_id":4,
+        "year": "1600s",
+        "description": "Royal New France. In 1604, the first European settlement north of Florida was established by French explorers Pierre de Monts and Samuel de Champlain, first on St. Croix Island (in present-day Maine), then at Port-Royal, in Acadia (present-day Nova Scotia).",
+        "type": "exploration"
+    },
+    {
+        "_id":5,
+        "year": "1700s",
+        "description": "Struggle for a Continent. In 1670, King Charles II of England granted the Hudson’s Bay Company exclusive trading rights over the watershed draining into Hudson Bay. For the next 100 years the Company competed with Montreal-based traders. In the 1700s France and Great Britain battled for control of North America. In 1759, the British defeated the French in the Battle of the Plains of Abraham at Québec City — marking the end of France’s empire in America.",
+        "type": "conflict"
+    },
+    {
+        "_id":6,
+        "year": "1758",
+        "description": "The Beginnings of Democracy. The first representative assembly was elected in Halifax, Nova Scotia, in 1758. Prince Edward Island followed in 1773, New Brunswick in 1785. The Constitutional Act of 1791 divided the Province of Quebec into Upper Canada (later Ontario), which was mainly Loyalist, Protestant and English-speaking, and Lower Canada (later Quebec), heavily Catholic and French-speaking.",
+        "type": "government"
+    },
+    {
+        "_id":7,
+        "year": "1774",
+        "description": "To better govern the French Roman Catholic majority, the British Parliement passed the Quebec Act of 1774. It allowed religious freedom for Catholics and permitted them to hold public office, a practice not then allowed in Britain. The Quebect Act restored French civil law while maintaining British criminal law.",
+        "type": "government"
+    },
+    {
+        "_id":8,
+        "year": "1776",
+        "description": "American revolution and Declaration of Independence. In 1776, the 13 British colonies to the south of Quebec declared independence and formed the United States. North America was again divided by war. More than 40,000 people loyal to the Crown, called “Loyalists,” fled the oppression of the American Revolution to settle in Nova Scotia and Quebec.",
+        "type": "conflict"
+    },
+    {
+        "_id":9,
+        "year": "1791",
+        "description": "The Constitutional Act of 1791 divided the Province of Quebec into Upper Canada (later Ontario), which was mainly Loyalist, Protestant and English-speaking, and Lower Canada (later Quebec), heavily Catholic and French-speaking. The Act also granted to the Canadas, for the first time, legislative assemblies elected by the people. The name Canada also became official at this time and has been used ever since. The Atlantic colonies and the two Canadas were known collectively as British North America.",
+        "type": "government"
+    },
+    {
+        "_id":10,
+        "year": "1807",
+        "description": "Abolition of Slavery. In 1807, the British Parliament prohibited the buying and selling of slaves, and in 1833 abolished slavery throughout the Empire. Thousands of slaves escaped from the United States, followed “the North Star” and settled in Canada via the Underground Railroad, a Christian anti-slavery network.",
+        "type": "government"
+    },
+    {
+        "_id":11,
+        "year": "1812",
+        "description": "The War of 1812: The Fight for Canada. The United States launched an invasion in June 1812. In 1813 the Americans burned Government House and the Parliament Buildings in York (now Toronto). In retaliation in 1814, Major-General Robert Ross led an expedition from Nova Scotia that burned down the White House and other public buildings in Washington, D.C. By 1814, the American attempt to conquer Canada had failed.",
+        "type": "conflict"
+    },
+    {
+        "_id":12,
+        "year": "1837-1838",
+        "description": "Rebellions of 1837–38. When armed rebellions occurred in 1837–38 in the area outside Montreal and in Toronto, the rebels did not have enough public support to succeed. They were defeated by British troops and Canadian volunteers. Lord Durham, an English reformer sent to report on the rebellions, recommended that Upper and Lower Canada be merged and given responsible government.",
+        "type": "conflict"
+    },
+    {
+        "_id":13,
+        "year": "1840",
+        "description": "Responsible Government. In 1840, Upper and Lower Canada were united as the Province of Canada. Reformers such as Sir Louis-Hippolyte La Fontaine and Robert Baldwin, in parallel with Joseph Howe in Nova Scotia, worked with British governors toward responsible government. In 1848–49 the governor of United Canada, Lord Elgin, with encouragement from London, introduced responsible government.",
+        "type": "government"
+    },
+    {
+        "_id":14,
+        "year": "1867",
+        "description": "Confederation. The British Parliament passed the British North America Act in 1867. The Dominion of Canada was officially born on July 1, 1867. Four provinces: Ontario, Quebec, New Brunswick and Nova Scotia. First PM is Sir John Alexander Macdonald. His portrait is on the 10 dollar bill.",
+        "type": "government"
+    },
+    {
+        "_id":15,
+        "year": "1896",
+        "description": "Sir Wilfrid Laurier became the first French Canadian prime minister since the Confederation and encouraged immigration to the West. His portrait is on the 5 dollar bill.",
+        "type": "government"
+    },
+    {
+        "_id":16,
+        "year": "1914",
+        "description": "World War I begins",
+        "type": "conflict"
+    },
+    {
+        "_id":17,
+        "year": "1917",
+        "description": "Women Get the Vote. In 1917, thanks to the leadership of women such as Dr. Stowe and other suffragettes, the federal government of Sir Robert Borden gave women the right to vote in federal elections — first to nurses at the battle front, then to women who were related to men in active wartime service. In 1918, most Canadian female citizens aged 21 and over were granted the right to vote in federal elections. In 1921 Agnes Macphail, a farmer and teacher, became the first woman MP. Due to the work of Thérèse Casgrain and others, Quebec granted women the vote in 1940.",
+        "type": "government"
+    },
+    {
+        "_id":18,
+        "year": "1917",
+        "description": "On the battlefield, the Canadians proved to be tough, innovative soldiers. Canada shared in the tragedy and triumph of the Western Front. The Canadian Corps captured Vimy Ridge in April 1917, with 10,000 killed or wounded, securing the Canadians’ reputation for valour as the “shock troops of the British Empire.”",
+        "type": "conflict"
+    },
+    {
+        "_id":19,
+        "year": "1918",
+        "description": "In 1918, under the command of General Sir Arthur Currie, Canada’s greatest soldier, the Canadian Corps advanced alongside the French and British Empire troops in the last hundred days. These included the victorious Battle of Amiens on August 8, 1918–which the Germans called “the black day of the German Army”–followed by Arras, Canal du Nord, Cambrai and Mons. With Germany and Austria’s surrender, the war ended in the Armistice on November 11, 1918. ",
+        "type": "conflict"
+    },
+    {
+        "_id":20,
+        "year": "1939",
+        "description": "World War II begins. More than one million Canadians and Newfoundlanders (Newfoundland was a separate British entity) served in the Second World War, out of a population of 11.5 million. Moreover, Canada contributed more to the Allied air effort than any other Commonwealth country, with over 130,000 Allied air crew trained in Canada under the British Commonwealth Air Training Plan. . At the end of the Second World War, Canada had the third-largest navy in the world.",
+        "type": "conflict"
+    },
+    {
+        "_id":21,
+        "year": "1949",
+        "description": "Newfoundland and Labrador joined Canada, last province to join.",
+        "type": "government"
+    },
+    {
+        "_id":22,
+        "year": "1960s",
+        "description": "French-Canadian society and culture flourished in the postwar years. Quebec experienced an era of rapid change in the 1960s known as the Quiet Revolution.",
+        "type": "government"
+    },
+    {
+        "_id":23,
+        "year": "1982",
+        "description": "1982 Canadian Charter of Rights and Freedoms. Including: Freedom of conscience and religion; Freedom of thought, belief, opinion and expression, including freedom of speech and of the press; Freedom of peaceful assembly; and Freedom of association. The Constitution of Canada was amended in 1982 to entrench the Canadian Charter of Rights and Freedoms, which begins with the words, \"Whereas Canada is founded upon principles that recognize the supremacy of God and the rule of law\". This phrase underlines the importance of religious traditions to Canadian society and the dignity and worth of the human person. Habeas corpus, the right to challenge unlawful detention by the state, comes from English common law. The Charter attempts to summarize fundamental freedoms while also setting out additional rights. The most important of these include: Mobility Rights, Aboriginal People's Rights, Official Language Rights and Minority Language Educational Rights, Multiculturalism",
+        "type": "government"
+    }
+]
