@@ -34,12 +34,12 @@ const TextTheme primaryTextTheme = TextTheme(
   ),
   bodyText2: TextStyle(
     color: Colors.white,
-    fontSize: 14.0,
+    fontSize: 15,
     letterSpacing: 0.25,
   ),
   button: TextStyle(
     color: Colors.white,
-    fontSize: 14.0,
+    fontSize: 15,
     letterSpacing: 1.25,
   ),
 );
@@ -67,12 +67,12 @@ const TextTheme accentTextTheme = TextTheme(
   ),
   bodyText2: TextStyle(
     color: Colors.black,
-    fontSize: 14.0,
+    fontSize: 15,
     letterSpacing: 0.25,
   ),
   button: TextStyle(
     color: Colors.black,
-    fontSize: 14.0,
+    fontSize: 15,
     letterSpacing: 1.25,
   ),
 );

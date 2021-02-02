@@ -35,34 +35,58 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        color: Theme.of(context).backgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
+    return Container(
+      color: Theme.of(context).backgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Flexible(
+              flex: 1,
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Your Canadian journey',
-                    style: Theme.of(context).accentTextTheme.headline3,
+                  FittedBox(
+                    fit: BoxFit.fitHeight,
+                    child: Text(
+                      'Your',
+                      style: Theme.of(context).accentTextTheme.headline3,
+                    ),
                   ),
-                  SizedBox(
-                    height: 10.0,
+                 FittedBox(
+                    fit: BoxFit.fitHeight,
+                    child: Text(
+                      'Canadian',
+                      style: Theme.of(context).accentTextTheme.headline3,
+                    ),
                   ),
-                  Text(
-                    'You have done $_noPracticeDone practice tests and $_noTestDone mock tests.',
-                    style: Theme.of(context).textTheme.headline6.copyWith(
-                        color: Colors.black54, fontWeight: FontWeight.w500),
+                  FittedBox(
+                    fit: BoxFit.fitHeight,
+                    child: Text(
+                      'Journey',
+                      style: Theme.of(context).accentTextTheme.headline3,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        'You have done $_noPracticeDone practice tests and $_noTestDone mock tests.',
+                        style: Theme.of(context).textTheme.headline6.copyWith(
+                            color: Colors.black54, fontWeight: FontWeight.w500),
+                      ),
+                    ),
                   ),
                 ],
               ),
-              Column(
+            ),
+            Flexible(
+              flex: 2,
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -96,8 +120,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

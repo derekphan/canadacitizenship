@@ -56,7 +56,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 10.0),
                     child: Container(
                       child: ListView.builder(
                         itemCount: numberOfTestQuestions,
