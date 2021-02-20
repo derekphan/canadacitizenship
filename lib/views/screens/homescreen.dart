@@ -1,4 +1,5 @@
 import 'package:cannuck_app_flutter/business_logic/models/questions_answers.dart';
+import 'package:cannuck_app_flutter/utilities/size_config.dart';
 import 'package:cannuck_app_flutter/views/components/buttons.dart';
 import 'package:cannuck_app_flutter/views/screens/learnscreen.dart';
 import 'package:cannuck_app_flutter/views/screens/testscreen.dart';
@@ -35,16 +36,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Container(
       color: Theme.of(context).backgroundColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Flexible(
-              flex: 1,
+            Container(
+              height: SizeConfig.safeBlockVertical * 28,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,39 +56,50 @@ class _HomeScreenState extends State<HomeScreen> {
                     fit: BoxFit.fitHeight,
                     child: Text(
                       'Your',
-                      style: Theme.of(context).accentTextTheme.headline3,
+                      style: Theme.of(context)
+                          .accentTextTheme
+                          .headline3
+                          .copyWith(
+                              fontSize: SizeConfig.safeBlockHorizontal * 9),
                     ),
                   ),
-                 FittedBox(
+                  FittedBox(
                     fit: BoxFit.fitHeight,
                     child: Text(
                       'Canadian',
-                      style: Theme.of(context).accentTextTheme.headline3,
+                      style: Theme.of(context)
+                          .accentTextTheme
+                          .headline3
+                          .copyWith(
+                              fontSize: SizeConfig.safeBlockHorizontal * 9),
                     ),
                   ),
                   FittedBox(
                     fit: BoxFit.fitHeight,
                     child: Text(
                       'Journey',
-                      style: Theme.of(context).accentTextTheme.headline3,
+                      style: Theme.of(context)
+                          .accentTextTheme
+                          .headline3
+                          .copyWith(
+                              fontSize: SizeConfig.safeBlockHorizontal * 9),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        'You have done $_noPracticeDone practice tests and $_noTestDone mock tests.',
-                        style: Theme.of(context).textTheme.headline6.copyWith(
-                            color: Colors.black54, fontWeight: FontWeight.w500),
-                      ),
+                  FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      'You have done $_noPracticeDone practice tests and $_noTestDone mock tests.',
+                      style: Theme.of(context).textTheme.headline6.copyWith(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w500,
+                          ),
                     ),
                   ),
                 ],
               ),
             ),
-            Flexible(
-              flex: 2,
+            Container(
+              height: SizeConfig.safeBlockVertical * 60,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,

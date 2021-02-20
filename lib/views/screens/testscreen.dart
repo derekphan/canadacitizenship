@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:cannuck_app_flutter/business_logic/models/questions_answers.dart';
-import 'package:cannuck_app_flutter/views/components/buttons.dart';
 import 'package:cannuck_app_flutter/utilities/constant.dart';
 import 'package:cannuck_app_flutter/views/components/timer.dart';
 import 'package:cannuck_app_flutter/views/screens/resultscreen.dart';
@@ -55,29 +54,29 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
   }
 
   // Navigation row for questions
-  List<Widget> _buildNavigationRow(BuildContext context, int rowNumber) {
-    QuestionList ql = context.watch<QuestionList>();
-    AnswerList al = context.watch<AnswerList>();
-    if (rowNumber == 1) {
-      return List<Widget>.generate(
-        10,
-        (index) => CircularButton(
-          title: "${index + 1}",
-          isCurrent: ql.currentQuestion == index,
-          isAnswered: al.list[index] != -1,
-        ),
-      );
-    } else {
-      return List<Widget>.generate(
-        10,
-        (index) => CircularButton(
-          title: "${index + 11}",
-          isCurrent: ql.currentQuestion == index + 10,
-          isAnswered: al.list[index + 10] != -1,
-        ),
-      );
-    }
-  }
+  // List<Widget> _buildNavigationRow(BuildContext context, int rowNumber) {
+  //   QuestionList ql = context.watch<QuestionList>();
+  //   AnswerList al = context.watch<AnswerList>();
+  //   if (rowNumber == 1) {
+  //     return List<Widget>.generate(
+  //       10,
+  //       (index) => CircularButton(
+  //         title: "${index + 1}",
+  //         isCurrent: ql.currentQuestion == index,
+  //         isAnswered: al.list[index] != -1,
+  //       ),
+  //     );
+  //   } else {
+  //     return List<Widget>.generate(
+  //       10,
+  //       (index) => CircularButton(
+  //         title: "${index + 11}",
+  //         isCurrent: ql.currentQuestion == index + 10,
+  //         isAnswered: al.list[index + 10] != -1,
+  //       ),
+  //     );
+  //   }
+  // }
 
   // Display question and answers text
   List<Widget> _buildQuestionText(BuildContext context) {
