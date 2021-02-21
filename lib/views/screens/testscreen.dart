@@ -53,124 +53,6 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
     }
   }
 
-  // Navigation row for questions
-  // List<Widget> _buildNavigationRow(BuildContext context, int rowNumber) {
-  //   QuestionList ql = context.watch<QuestionList>();
-  //   AnswerList al = context.watch<AnswerList>();
-  //   if (rowNumber == 1) {
-  //     return List<Widget>.generate(
-  //       10,
-  //       (index) => CircularButton(
-  //         title: "${index + 1}",
-  //         isCurrent: ql.currentQuestion == index,
-  //         isAnswered: al.list[index] != -1,
-  //       ),
-  //     );
-  //   } else {
-  //     return List<Widget>.generate(
-  //       10,
-  //       (index) => CircularButton(
-  //         title: "${index + 11}",
-  //         isCurrent: ql.currentQuestion == index + 10,
-  //         isAnswered: al.list[index + 10] != -1,
-  //       ),
-  //     );
-  //   }
-  // }
-
-  // Display question and answers text
-  List<Widget> _buildQuestionText(BuildContext context) {
-    QuestionList ql = context.watch<QuestionList>();
-    AnswerList al = context.watch<AnswerList>();
-    return [
-      Container(
-        child: Text(
-          ql.list[ql.currentQuestion].question,
-          style: Theme.of(context).accentTextTheme.subtitle1,
-        ),
-      ),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        mainAxisSize: MainAxisSize.min,
-        children: List<Widget>.generate(4, (index) {
-          return IntrinsicHeight(
-                      child: Container(
-              margin: EdgeInsets.symmetric(vertical: 10.0),
-              child: TextButton(
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    ql.list[ql.currentQuestion].answers[index],
-                    style: Theme.of(context).accentTextTheme.subtitle1,
-                  ),
-                ),
-                style: TextButton.styleFrom(
-                    minimumSize: Size.fromHeight(20),
-                    padding: EdgeInsets.all(5),
-                    backgroundColor: (al.list[ql.currentQuestion] == -1)
-                        ? Colors.white
-                        : (index == al.list[ql.currentQuestion]
-                            ? Colors.green
-                            : (!widget.isTimed &&
-                                    index + 1 ==
-                                        ql.list[ql.currentQuestion]
-                                            .correctAnswer
-                                ? Colors.red
-                                : Colors.white))),
-                onPressed: () {
-                  context
-                      .read<AnswerList>()
-                      .setAnswer(ql.currentQuestion, index);
-                },
-              ),
-            ),
-          );
-        }),
-      ),
-    ];
-
-    // List<Widget>.generate(6, (index) {
-    //   if (index == 0) {
-    //     return Text(
-    //       ql.list[ql.currentQuestion].question,
-    //       style: Theme.of(context).accentTextTheme.subtitle1,
-    //     );
-    //   } else if (index == 1) {
-    //     return SizedBox(
-    //       height: 25,
-    //     );
-    //   } else {
-    //     return Container(
-    //       margin: EdgeInsets.symmetric(vertical: 5),
-    //       child: TextButton(
-    //         child: Align(
-    //           alignment: Alignment.topLeft,
-    //           child: Text(
-    //             ql.list[ql.currentQuestion].answers[index - 2],
-    //             style: Theme.of(context).accentTextTheme.subtitle1,
-    //           ),
-    //         ),
-    //         style: TextButton.styleFrom(
-    //             minimumSize: Size.fromHeight(20),
-    //             padding: EdgeInsets.all(5),
-    //             backgroundColor: (al.list[ql.currentQuestion] == -1)
-    //                 ? Colors.white
-    //                 : (index == al.list[ql.currentQuestion]
-    //                     ? Colors.green
-    //                     : (!widget.isTimed &&
-    //                             index - 1 ==
-    //                                 ql.list[ql.currentQuestion].correctAnswer
-    //                         ? Colors.red
-    //                         : Colors.white))),
-    //         onPressed: () {
-    //           context.read<AnswerList>().setAnswer(ql.currentQuestion, index);
-    //         },
-    //       ),
-    //     );
-    //   }
-    // });
-  }
-
   // Submit answer to get results
   _showResults(BuildContext context) async {
     QuestionList ql = context.read<QuestionList>();
@@ -205,7 +87,7 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     QuestionList ql = context.watch<QuestionList>();
-    //AnswerList al = context.watch<AnswerList>();
+    AnswerList al = context.watch<AnswerList>();
 
     return ql.isInitializing
         ? CircularProgressIndicator()
@@ -248,80 +130,121 @@ class _TestScreenState extends State<TestScreen> with TickerProviderStateMixin {
                 backgroundColor:
                     widget.isTimed ? testMainColor : practiceMainColor,
                 textTheme: Theme.of(context).primaryTextTheme,
-                iconTheme: //Theme.of(context).iconTheme,
+                iconTheme:
                     Theme.of(context).iconTheme.copyWith(color: Colors.white),
               ),
-              body: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(bottom: 15.0),
-                      child: Text(
-                        "Question ${ql.currentQuestion + 1}/20",
-                        style: Theme.of(context)
-                            .accentTextTheme
-                            .subtitle1
-                            .copyWith(fontWeight: FontWeight.bold),
+              body: SafeArea(
+                child: Container(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(bottom: 15.0),
+                        child: Text(
+                          "Question ${ql.currentQuestion + 1}/20",
+                          style: Theme.of(context)
+                              .accentTextTheme
+                              .subtitle1
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: _buildQuestionText(context),
+                      Container(
+                        child: Text(
+                          ql.list[ql.currentQuestion].question,
+                          style: Theme.of(context).accentTextTheme.subtitle1,
+                        ),
                       ),
-                    ),
-                    Container(
-                      //constraints: BoxConstraints(maxHeight: 70),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.navigate_before),
-                                iconSize: 50,
-                                color: Colors.black,
-                                onPressed: () {
-                                  context
-                                      .read<QuestionList>()
-                                      .moveToPreviousQuestion();
-                                },
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 4,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 5.0),
+                              child: Card(
+                                color: ((al.list[ql.currentQuestion] == -1)
+                                    ? Colors.white
+                                    : (index == al.list[ql.currentQuestion]
+                                        ? Colors.green
+                                        : (!widget.isTimed &&
+                                                index + 1 ==
+                                                    ql.list[ql.currentQuestion]
+                                                        .correctAnswer
+                                            ? Colors.red
+                                            : Colors.white))),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Container(
+                                    child: TextButton(
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Text(
+                                          ql.list[ql.currentQuestion]
+                                              .answers[index],
+                                          style: Theme.of(context)
+                                              .accentTextTheme
+                                              .subtitle1,
+                                        ),
+                                      ),
+                                      style: TextButton.styleFrom(
+                                        minimumSize: Size.fromHeight(20),
+                                        padding: EdgeInsets.all(5),
+                                      ),
+                                      onPressed: () {
+                                        context.read<AnswerList>().setAnswer(
+                                            ql.currentQuestion, index);
+                                      },
+                                    ),
+                                  ),
+                                ),
                               ),
-                              IconButton(
-                                icon: Icon(Icons.check),
-                                iconSize: 50,
-                                color: Colors.black,
-                                onPressed: () => _showResults(context),
-                              ),
-                              IconButton(
-                                icon: Icon(Icons.navigate_next),
-                                iconSize: 50,
-                                color: Colors.black,
-                                onPressed: () {
-                                  context
-                                      .read<QuestionList>()
-                                      .moveToNextQuestion();
-                                },
-                              )
-                            ],
-                          ),
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          //   children: _buildNavigationRow(context, 1),
-                          // ),
-                          // Row(
-                          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          //     children: _buildNavigationRow(context, 2))
-                        ],
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconButton(
+                                  icon: Icon(Icons.navigate_before),
+                                  iconSize: 50,
+                                  color: Colors.black,
+                                  onPressed: () {
+                                    context
+                                        .read<QuestionList>()
+                                        .moveToPreviousQuestion();
+                                  },
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.check),
+                                  iconSize: 50,
+                                  color: Colors.black,
+                                  onPressed: () => _showResults(context),
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.navigate_next),
+                                  iconSize: 50,
+                                  color: Colors.black,
+                                  onPressed: () {
+                                    context
+                                        .read<QuestionList>()
+                                        .moveToNextQuestion();
+                                  },
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
